@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shirt 01 ⸺ Your Brand</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-left a, .nav-right a {
+      text-decoration: none;
+      color: #000;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-left a:hover, .nav-right a:hover {
+      opacity: 0.6;
+    }
+
+    .separator {
+      color: #ccc;
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo-container img {
+      height: 40px;
+    }
+
+    .nav-right .shipping-info {
+      font-size: 12px;
+      color: #666;
+    }
+
+    /* MAIN CONTENT */
+    main {
+      margin-top: 100px;
+      padding: 60px 80px;
+    }
+
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* LEFT SIDE - IMAGES */
+    .product-images {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .product-images img {
+      width: 100%;
+      height: auto;
+    }
+
+    /* RIGHT SIDE - DETAILS */
+    .product-details {
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
+
+    .product-title {
+      font-size: 2.5rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .product-subtitle {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.8;
+      letter-spacing: 0.3px;
+    }
+
+    .product-type {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #999;
+      margin-bottom: 40px;
+    }
+
+    /* SIZE SELECTOR */
+    .size-section {
+      margin-bottom: 40px;
+    }
+
+    .size-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    .size-options {
+      display: flex;
+      gap: 15px;
+    }
+
+    .size-option {
+      padding: 15px 30px;
+      border: 1px solid #000;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .size-option:hover,
+    .size-option.selected {
+      background: #000;
+      color: #fff;
+    }
+
+    /* ADD TO CART */
+    .add-to-cart {
+      width: 100%;
+      padding: 20px;
+      background: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: background 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    .add-to-cart:hover {
+      background: #333;
+    }
+
+    .price-info {
+      font-size: 14px;
+      color: #666;
+      letter-spacing: 0.5px;
+      margin-bottom: 40px;
+    }
+
+    /* PRODUCT INFO SECTIONS */
+    .info-section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+
+    .info-section:last-child {
+      border-bottom: none;
+    }
+
+    .info-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .info-content {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.8;
+      letter-spacing: 0.2px;
+    }
+
+    /* STORY SECTION */
+    .story-section {
+      margin-top: 80px;
+      padding: 80px 0;
+      border-top: 1px solid #000;
+    }
+
+    .story-title {
+      font-size: 2rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .story-content {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #333;
+      letter-spacing: 0.3px;
+    }
+
+    .story-content p {
+      margin-bottom: 20px;
+    }
+
+    .story-content .initial {
+      font-size: 4rem;
+      font-weight: 300;
+      float: left;
+      line-height: 0.8;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+
+    /* RELATED PRODUCTS */
+    .related-products {
+      margin-top: 80px;
+      padding: 80px 0;
+      border-top: 1px solid #000;
+    }
+
+    .related-title {
+      font-size: 1.5rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 60px;
+      text-align: center;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 60px;
+    }
+
+    .related-item {
+      text-align: center;
+    }
+
+    .related-item img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+      transition: transform 0.4s ease;
+    }
+
+    .related-item:hover img {
+      transform: scale(1.02);
+    }
+
+    .related-item a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    .related-item h3 {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .related-item p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .related-item .price {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .product-details {
+        position: relative;
+        top: 0;
+      }
+
+      .related-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 20px;
+      }
+
+      .product-title {
+        font-size: 1.8rem;
+      }
+
+      .story-section,
+      .related-products {
+        padding: 40px 0;
+      }
+
+      .related-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <nav class="nav-left">
+      <a href="index.html#shop">Shop All</a>
+      <span class="separator">•</span>
+      <a href="#story">The Story</a>
+    </nav>
+    
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="logo.png" alt="Brand Logo">
+      </a>
+    </div>
+    
+    <nav class="nav-right">
+      <span class="shipping-info">Free shipping in EU</span>
+      <span class="separator">•</span>
+      <a href="#cart">Cart</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="product-container">
+      <!-- LEFT SIDE - PRODUCT IMAGES -->
+      <div class="product-images">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Front View">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Detail View">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Back View">
+      </div>
+
+      <!-- RIGHT SIDE - PRODUCT DETAILS -->
+      <div class="product-details">
+        <h1 class="product-title">Shirt 01</h1>
+        
+        <p class="product-subtitle">
+          Refined tailoring meets modern minimalism. Crafted from premium cotton for effortless sophistication.
+        </p>
+
+        <div class="product-type">100% Cotton</div>
+
+        <!-- SIZE SELECTION -->
+        <div class="size-section">
+          <label class="size-label">Size</label>
+          <div class="size-options">
+            <button class="size-option" onclick="selectSize(this)">S</button>
+            <button class="size-option selected" onclick="selectSize(this)">M</button>
+            <button class="size-option" onclick="selectSize(this)">L</button>
+            <button class="size-option" onclick="selectSize(this)">XL</button>
+          </div>
+        </div>
+
+        <!-- ADD TO CART -->
+        <button class="add-to-cart">add to cart⸺€ 120</button>
+        <div class="price-info">€ 120 per item</div>
+
+        <!-- PRODUCT INFORMATION -->
+        <div class="info-section">
+          <h3 class="info-title">Details</h3>
+          <div class="info-content">
+            Premium cotton fabric<br>
+            Classic collar<br>
+            Button-front closure<br>
+            Long sleeves with button cuffs<br>
+            Regular fit
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h3 class="info-title">Care Instructions</h3>
+          <div class="info-content">
+            Machine wash cold<br>
+            Do not bleach<br>
+            Tumble dry low<br>
+            Iron on medium heat<br>
+            Dry clean if desired
+          </div>
+        </div>
+
+        <div class="info-section">
+          <h3 class="info-title">Shipping</h3>
+          <div class="info-content">
+            We offer free shipping to all EU countries above €100<br>
+            UK Shipping: €20 flat rate<br>
+            Worldwide Shipping: €40 flat rate
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STORY SECTION -->
+    <div class="story-section">
+      <h2 class="story-title">An Ode to Timeless Elegance</h2>
+      <div class="story-content">
+        <p>
+          <span class="initial">I</span>n the heart of our atelier, where craftsmanship meets contemporary design, 
+          Shirt 01 emerges as a testament to refined simplicity. Each stitch tells a story of dedication, 
+          each seam a commitment to excellence that transcends fleeting trends.
+        </p>
+        <p>
+          Inspired by the understated sophistication of modern European tailoring, this piece embodies 
+          the essence of versatility. From boardroom presentations to evening gatherings, it adapts 
+          seamlessly to the rhythm of contemporary life while maintaining an air of effortless grace.
+        </p>
+        <p>
+          The carefully selected cotton speaks to our commitment to both comfort and durability. 
+          It breathes with you, moves with you, and ages gracefully—developing a unique character 
+          that becomes distinctly yours over time.
+        </p>
+      </div>
+    </div>
+
+    <!-- RELATED PRODUCTS -->
+    <div class="related-products">
+      <h2 class="related-title">More to explore</h2>
+      <div class="related-grid">
+        <div class="related-item">
+          <a href="shirt-02.html">
+            <img src="shirt-02.jpg" alt="Shirt 02">
+            <h3>Shirt 02</h3>
+            <p>Contemporary silhouette designed for the discerning individual. Elevated essentials for everyday wear.</p>
+            <p class="price">€ 95</p>
+          </a>
+        </div>
+
+        <div class="related-item">
+          <a href="shirt-03.html">
+            <img src="shirt-03.jpg" alt="Shirt 03">
+            <h3>Shirt 03</h3>
+            <p>Exceptional quality fabric with impeccable attention to detail. A statement piece for the modern wardrobe.</p>
+            <p class="price">€ 150</p>
+          </a>
+        </div>
+
+        <div class="related-item">
+          <a href="shirt-02.html">
+            <img src="shirt-02.jpg" alt="Shirt 02">
+            <h3>Shirt 02</h3>
+            <p>Contemporary silhouette designed for the discerning individual.</p>
+            <p class="price">€ 95</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function selectSize(button) {
+      // Remove selected class from all buttons
+      document.querySelectorAll('.size-option').forEach(btn => {
+        btn.classList.remove('selected');
+      });
+      // Add selected class to clicked button
+      button.classList.add('selected');
+    }
+  </script>
+</body>
+</html>
