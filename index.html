@@ -31,7 +31,7 @@
     /* THREE COLUMN PRODUCT GRID */
     .products {
       display: grid;
-      grid-template-columns: repeat(3, 2fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 60px 40px;
     }
@@ -77,20 +77,40 @@
   </section>
 
   <!-- PRODUCT GRID -->
-  <section class="products">
-    <div class="product-card">
-      <img src="Shirt 01.jpg" alt="Shirt 01">
-      <h3>Shirt 01</h3>
+  <section class="products" style="position:relative; border-top:1px solid black; border-bottom:1px solid black; padding:80px 60px;">
+
+    <!-- vertical lines (thin) -->
+    <div style="position:absolute; top:0; bottom:0; left:33.33%; width:1px; background:black;"></div>
+    <div style="position:absolute; top:0; bottom:0; left:66.66%; width:1px; background:black;"></div>
+
+    <div class="product-card" style="padding:60px; text-align:center;">
+      <a href="product1.html" style="text-decoration:none; color:black;">
+        <img src="product1.jpg" alt="Product 1" style="margin-bottom:20px;">
+        <h3 style="letter-spacing:2px;">Product One</h3>
+        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
+        <p style="font-weight:bold;">€120</p>
+      </a>
     </div>
-    <div class="product-card">
-      <img src="Shirt 02.jpg" alt="Shirt 02">
-      <h3>Shirt 02</h3>
+
+    <div class="product-card" style="padding:60px; text-align:center;">
+      <a href="product2.html" style="text-decoration:none; color:black;">
+        <img src="product2.jpg" alt="Product 2" style="margin-bottom:20px;">
+        <h3 style="letter-spacing:2px;">Product Two</h3>
+        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
+        <p style="font-weight:bold;">€95</p>
+      </a>
     </div>
-    <div class="product-card">
-      <img src="Shirt 03.jpg" alt="Shirt 03">
-      <h3>Shirt 03</h3>
+
+    <div class="product-card" style="padding:60px; text-align:center;">
+      <a href="product3.html" style="text-decoration:none; color:black;">
+        <img src="product3.jpg" alt="Product 3" style="margin-bottom:20px;">
+        <h3 style="letter-spacing:2px;">Product Three</h3>
+        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
+        <p style="font-weight:bold;">€150</p>
+      </a>
     </div>
-  </section>
+
+</section>
 
 </body>
 </html>
