@@ -5,112 +5,355 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Brand</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #000;
+      background: #fff;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #e5e5e5;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .nav-left a, .nav-right a {
+      text-decoration: none;
+      color: #000;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-left a:hover, .nav-right a:hover {
+      opacity: 0.6;
+    }
+
+    .separator {
+      color: #ccc;
+    }
+
+    .logo-container {
+      text-align: center;
+    }
+
+    .logo-container img {
+      height: 40px;
+    }
+
+    .nav-right .shipping-info {
+      font-size: 12px;
+      color: #666;
     }
 
     /* HERO SECTION */
     .hero {
       height: 100vh;
-      background-image: url('hero.jpg'); /* Replace with your image */
+      background-image: url('hero.jpg');
       background-size: cover;
       background-position: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: white;
+      color: #fff;
       text-align: center;
-    }
-    .hero h1 {
-      font-size: 4rem;
-      letter-spacing: 3px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      margin-top: 80px;
+      position: relative;
     }
 
-    /* THREE COLUMN PRODUCT GRID */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      font-weight: 300;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* PRODUCT SECTION */
+    .products-wrapper {
+      padding: 100px 80px;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      position: relative;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      padding: 60px 40px;
+      position: relative;
     }
+
+    /* Vertical dividers */
+    .products::before,
+    .products::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: #000;
+    }
+
+    .products::before {
+      left: 33.33%;
+    }
+
+    .products::after {
+      left: 66.66%;
+    }
+
     .product-card {
-      text-align: center;
+      text-align: left;
+      transition: background-color 0.3s ease;
+      border-left: 1px solid #000;
+      border-right: 1px solid #000;
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      display: flex;
+      flex-direction: column;
     }
-    .product-card img {
+
+    .product-card:hover {
+      background-color: #fafafa;
+    }
+
+    .product-card a {
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .product-image-container {
+      padding: 80px 60px;
+      border-bottom: 1px solid #000;
+    }
+
+    .product-image {
       width: 100%;
       height: auto;
+      transition: transform 0.4s ease;
     }
-    .product-card h3 {
-      margin-top: 10px;
-      font-size: 1.2rem;
+
+    .product-info {
+      padding: 40px 60px;
+    }
+
+    .product-card:hover .product-image {
+      transform: scale(1.02);
+    }
+
+    .product-name {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .product-description {
+      margin: 15px 0;
+      font-size: 15px;
+      color: #666;
+      line-height: 1.8;
+      letter-spacing: 0.3px;
+      text-align: justify;
+    }
+
+    .product-price {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-top: 15px;
+      letter-spacing: 1px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .products::before {
+        left: 50%;
+      }
+
+      .products::after {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+
+      .nav-left, .nav-right {
+        font-size: 11px;
+        gap: 10px;
+      }
+
+      .nav-right .shipping-info {
+        display: none;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .products::before {
+        display: none;
+      }
+
+      .products-wrapper {
+        padding: 40px 20px;
+      }
+
+      .product-card {
+        padding: 40px 20px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+
+      .product-image-container {
+        padding: 40px 20px;
+      }
+
+      .product-info {
+        padding: 30px 20px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
 <body>
-
   <!-- HEADER -->
-  <header style="width:100%; padding:20px 40px; display:flex; justify-content:space-between; align-items:center; position:fixed; top:0; left:0; background:white; border-bottom:1px solid #eee; z-index:1000;">
-    <nav style="font-size:14px; letter-spacing:2px; display:flex; gap:20px;">
-      <a href="#" style="text-decoration:none; color:black;">Shop All</a>
-      <span>•</span>
-      <a href="#" style="text-decoration:none; color:black;">The Story</a>
+  <header>
+    <nav class="nav-left">
+      <a href="#shop">Shop All</a>
+      <span class="separator">•</span>
+      <a href="#story">The Story</a>
     </nav>
-
-    <div style="text-align:center;">
-      <img src="logo.png" alt="Logo" style="height:40px;">
+    
+    <div class="logo-container">
+      <img src="logo.png" alt="Brand Logo">
     </div>
-
-    <nav style="font-size:14px; letter-spacing:2px; display:flex; gap:20px;">
-      <span>Free shipping in EU</span>
-      <span>•</span>
-      <a href="#" style="text-decoration:none; color:black;">Cart</a>
+    
+    <nav class="nav-right">
+      <span class="shipping-info">Free shipping in EU</span>
+      <span class="separator">•</span>
+      <a href="#cart">Cart</a>
     </nav>
   </header>
 
-  <div style="height:100px;"></div> <!-- spacer so hero is not under header -->
-
   <!-- HERO SECTION -->
   <section class="hero">
-    <h1>Your Brand Name</h1>
+    <div class="hero-content">
+      <h1>Your Brand Name</h1>
+      <p>Timeless Elegance</p>
+    </div>
   </section>
 
   <!-- PRODUCT GRID -->
-  <section class="products" style="position:relative; border-top:1px solid black; border-bottom:1px solid black; padding:80px 60px;">
+  <section class="products-wrapper" id="shop">
+    <div class="products">
+      <div class="product-card">
+        <a href="product1.html">
+          <div class="product-image-container">
+            <img src="product1.jpg" alt="Shirt 01" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Shirt 01</h3>
+            <p class="product-description">Refined tailoring meets modern minimalism. Crafted from premium cotton for effortless sophistication.</p>
+            <p class="product-price">€120</p>
+          </div>
+        </a>
+      </div>
 
-    <!-- vertical lines (thin) -->
-    <div style="position:absolute; top:0; bottom:0; left:33.33%; width:1px; background:black;"></div>
-    <div style="position:absolute; top:0; bottom:0; left:66.66%; width:1px; background:black;"></div>
+      <div class="product-card">
+        <a href="product2.html">
+          <div class="product-image-container">
+            <img src="product2.jpg" alt="Shirt 02" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Shirt 02</h3>
+            <p class="product-description">Contemporary silhouette designed for the discerning individual. Elevated essentials for everyday wear.</p>
+            <p class="product-price">€95</p>
+          </div>
+        </a>
+      </div>
 
-    <div class="product-card" style="padding:60px; text-align:center;">
-      <a href="product1.html" style="text-decoration:none; color:black;">
-        <img src="product1.jpg" alt="Product 1" style="margin-bottom:20px;">
-        <h3 style="letter-spacing:2px;">Product One</h3>
-        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
-        <p style="font-weight:bold;">€120</p>
-      </a>
+      <div class="product-card">
+        <a href="product3.html">
+          <div class="product-image-container">
+            <img src="product3.jpg" alt="Shirt 03" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Shirt 03</h3>
+            <p class="product-description">Exceptional quality fabric with impeccable attention to detail. A statement piece for the modern wardrobe.</p>
+            <p class="product-price">€150</p>
+          </div>
+        </a>
+      </div>
     </div>
-
-    <div class="product-card" style="padding:60px; text-align:center;">
-      <a href="product2.html" style="text-decoration:none; color:black;">
-        <img src="product2.jpg" alt="Product 2" style="margin-bottom:20px;">
-        <h3 style="letter-spacing:2px;">Product Two</h3>
-        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
-        <p style="font-weight:bold;">€95</p>
-      </a>
-    </div>
-
-    <div class="product-card" style="padding:60px; text-align:center;">
-      <a href="product3.html" style="text-decoration:none; color:black;">
-        <img src="product3.jpg" alt="Product 3" style="margin-bottom:20px;">
-        <h3 style="letter-spacing:2px;">Product Three</h3>
-        <p style="margin:10px 0 5px 0; font-size:14px;">Short product description goes here.</p>
-        <p style="font-weight:bold;">€150</p>
-      </a>
-    </div>
-
-</section>
-
+  </section>
 </body>
 </html>
