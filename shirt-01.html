@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shirt 01 ⸺ Your Brand</title>
+  <title>Shirt 01 ⸺ Veronetta H.</title>
   <style>
     * {
       margin: 0;
@@ -14,8 +14,8 @@
     body {
       font-family: 'Avenir', 'Avenir Next', 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #000;
-      background: #fff;
+      color: #3a3a3a;
+      background: #ede8db;
     }
 
     /* HEADER */
@@ -24,12 +24,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      padding: 20px 40px;
+      padding: 25px 50px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(255, 255, 255, 0.98);
-      border-bottom: 1px solid #e5e5e5;
+      background: rgba(237, 232, 219, 0.95);
+      border-bottom: 1px solid #d4cfc2;
       z-index: 1000;
       backdrop-filter: blur(10px);
     }
@@ -37,24 +37,26 @@
     .nav-left, .nav-right {
       display: flex;
       align-items: center;
-      gap: 15px;
-      font-size: 13px;
-      letter-spacing: 1px;
+      gap: 20px;
+      font-size: 11px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
     }
 
     .nav-left a, .nav-right a {
       text-decoration: none;
-      color: #000;
+      color: #3a3a3a;
       transition: opacity 0.3s ease;
+      font-weight: 500;
     }
 
     .nav-left a:hover, .nav-right a:hover {
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .separator {
-      color: #ccc;
+      color: #c9c5bd;
+      font-weight: 300;
     }
 
     .logo-container {
@@ -66,20 +68,21 @@
     }
 
     .nav-right .shipping-info {
-      font-size: 12px;
-      color: #666;
+      font-size: 10px;
+      color: #8a8a8a;
+      letter-spacing: 1px;
     }
 
     /* MAIN CONTENT */
     main {
-      margin-top: 100px;
-      padding: 60px 80px;
+      margin-top: 90px;
+      padding: 60px 40px;
     }
 
     .product-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -94,6 +97,7 @@
     .product-images img {
       width: 100%;
       height: auto;
+      border: 1px solid #000;
     }
 
     /* RIGHT SIDE - DETAILS */
@@ -101,216 +105,296 @@
       position: sticky;
       top: 120px;
       height: fit-content;
+      background: #fefdfb;
+      border: 1px solid #000;
+      padding: 50px 40px;
     }
 
     .product-title {
-      font-size: 2.5rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2rem;
       font-weight: 300;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
+      color: #3a3a3a;
     }
 
     .product-subtitle {
       font-size: 14px;
-      color: #666;
+      color: #6a6a6a;
       margin-bottom: 30px;
       line-height: 1.8;
       letter-spacing: 0.3px;
+      text-align: justify;
     }
 
-    .product-type {
-      font-size: 12px;
-      text-transform: uppercase;
+    .feeling-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 35px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #e3ddce;
+    }
+
+    .feeling-tag {
+      font-size: 11px;
+      padding: 8px 16px;
+      background: #ede8db;
+      color: #5a5a5a;
       letter-spacing: 1px;
-      color: #999;
-      margin-bottom: 40px;
+      text-transform: uppercase;
+      font-weight: 500;
     }
 
     /* SIZE SELECTOR */
     .size-section {
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
 
     .size-label {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       font-weight: 600;
       margin-bottom: 15px;
       display: block;
+      color: #3a3a3a;
     }
 
     .size-options {
       display: flex;
-      gap: 15px;
+      gap: 12px;
+      flex-wrap: wrap;
     }
 
     .size-option {
-      padding: 15px 30px;
-      border: 1px solid #000;
-      background: #fff;
+      padding: 12px 24px;
+      border: 1px solid #3a3a3a;
+      background: #fefdfb;
       cursor: pointer;
       transition: all 0.3s ease;
-      font-size: 14px;
+      font-size: 13px;
       letter-spacing: 1px;
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     .size-option:hover,
     .size-option.selected {
-      background: #000;
-      color: #fff;
+      background: #3a3a3a;
+      color: #fefdfb;
     }
 
     /* ADD TO CART */
     .add-to-cart {
       width: 100%;
-      padding: 20px;
-      background: #000;
-      color: #fff;
+      padding: 18px;
+      background: #3a3a3a;
+      color: #fefdfb;
       border: none;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 2px;
       transition: background 0.3s ease;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
     }
 
     .add-to-cart:hover {
-      background: #333;
+      background: #5a5a5a;
     }
 
     .price-info {
-      font-size: 14px;
-      color: #666;
+      font-size: 13px;
+      color: #8a8a8a;
       letter-spacing: 0.5px;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
+      text-align: center;
     }
 
     /* PRODUCT INFO SECTIONS */
     .info-section {
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #e5e5e5;
+      margin-bottom: 35px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #e3ddce;
     }
 
     .info-section:last-child {
       border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
     }
 
     .info-title {
-      font-size: 13px;
+      font-size: 12px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
       font-weight: 600;
       margin-bottom: 15px;
+      color: #3a3a3a;
     }
 
     .info-content {
-      font-size: 14px;
-      color: #333;
+      font-size: 13px;
+      color: #6a6a6a;
       line-height: 1.8;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
 
     /* STORY SECTION */
     .story-section {
-      margin-top: 80px;
+      margin-top: 60px;
       padding: 80px 0;
-      border-top: 1px solid #000;
+      border-top: 1px solid #d4cfc2;
+      background: #e3ddce;
     }
 
-    .story-title {
-      font-size: 2rem;
-      font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
-      text-align: center;
+    .story-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .story-image {
+      width: 100%;
+      height: auto;
+      border: 1px solid #000;
     }
 
     .story-content {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 15px;
-      line-height: 1.9;
-      color: #333;
-      letter-spacing: 0.3px;
+      padding: 0 40px;
+    }
+
+    .story-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      color: #3a3a3a;
+    }
+
+    .story-divider {
+      width: 60px;
+      height: 1px;
+      background: #3a3a3a;
+      margin-bottom: 30px;
     }
 
     .story-content p {
+      font-size: 14px;
+      line-height: 1.9;
+      color: #5a5a5a;
       margin-bottom: 20px;
+      letter-spacing: 0.3px;
+      text-align: justify;
     }
 
     .story-content .initial {
-      font-size: 4rem;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 3.5rem;
       font-weight: 300;
       float: left;
       line-height: 0.8;
-      margin-right: 10px;
-      margin-top: 10px;
+      margin-right: 8px;
+      margin-top: 8px;
+      color: #3a3a3a;
     }
 
     /* RELATED PRODUCTS */
     .related-products {
-      margin-top: 80px;
-      padding: 80px 0;
-      border-top: 1px solid #000;
+      margin-top: 60px;
+      padding: 80px 40px;
+      background: #ede8db;
     }
 
     .related-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
       font-size: 1.5rem;
       font-weight: 300;
-      letter-spacing: 2px;
-      margin-bottom: 60px;
+      letter-spacing: 3px;
+      margin-bottom: 50px;
       text-align: center;
+      color: #3a3a3a;
     }
 
     .related-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 60px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .related-item {
-      text-align: center;
+      background: #fefdfb;
+      border: 1px solid #000;
+      transition: all 0.4s ease;
     }
 
-    .related-item img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-      transition: transform 0.4s ease;
-    }
-
-    .related-item:hover img {
-      transform: scale(1.02);
+    .related-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
 
     .related-item a {
       text-decoration: none;
-      color: #000;
+      color: #3a3a3a;
+      display: block;
+    }
+
+    .related-item-image {
+      position: relative;
+      overflow: hidden;
+      background: #e3ddce;
+      aspect-ratio: 3/4;
+    }
+
+    .related-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .related-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .related-item-info {
+      padding: 25px;
+      text-align: left;
     }
 
     .related-item h3 {
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 10px;
+      font-weight: 400;
+      margin-bottom: 12px;
+      color: #3a3a3a;
     }
 
     .related-item p {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-      margin-bottom: 10px;
+      font-size: 13px;
+      color: #6a6a6a;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      text-align: justify;
     }
 
     .related-item .price {
-      font-size: 14px;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.1rem;
       font-weight: 400;
+      color: #3a3a3a;
     }
 
     /* RESPONSIVE */
@@ -325,8 +409,13 @@
         top: 0;
       }
 
+      .story-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
       .related-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
     }
 
@@ -335,39 +424,57 @@
         padding: 40px 20px;
       }
 
+      .product-details {
+        padding: 30px 25px;
+      }
+
       .product-title {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
       }
 
       .story-section,
       .related-products {
-        padding: 40px 0;
+        padding: 60px 20px;
       }
 
-      .related-grid {
-        grid-template-columns: 1fr;
+      .story-content {
+        padding: 0;
+      }
+
+      header {
+        padding: 20px 25px;
+      }
+
+      .nav-left, .nav-right {
+        font-size: 10px;
+        gap: 12px;
+      }
+
+      .nav-right .shipping-info {
+        display: none;
       }
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- HEADER -->
   <header>
     <nav class="nav-left">
-      <a href="index.html#shop">Shop All</a>
-      <span class="separator">•</span>
-      <a href="#story">The Story</a>
+      <a href="index.html#shop">Collection</a>
+      <span class="separator">⸺</span>
+      <a href="index.html#philosophy">Philosophy</a>
     </nav>
     
     <div class="logo-container">
       <a href="index.html">
-        <img src="logo.png" alt="Brand Logo">
+        <img src="logo.png" alt="Veronetta H. Logo">
       </a>
     </div>
     
     <nav class="nav-right">
       <span class="shipping-info">Free shipping in EU</span>
-      <span class="separator">•</span>
+      <span class="separator">⸺</span>
       <a href="#cart">Cart</a>
     </nav>
   </header>
@@ -377,9 +484,9 @@
     <div class="product-container">
       <!-- LEFT SIDE - PRODUCT IMAGES -->
       <div class="product-images">
-        <img src="shirt-01.jpg" alt="Shirt 01 - Front View">
-        <img src="shirt-01.jpg" alt="Shirt 01 - Detail View">
-        <img src="shirt-01.jpg" alt="Shirt 01 - Back View">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Main">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Detail">
+        <img src="shirt-01.jpg" alt="Shirt 01 - Styled">
       </div>
 
       <!-- RIGHT SIDE - PRODUCT DETAILS -->
@@ -387,10 +494,16 @@
         <h1 class="product-title">Shirt 01</h1>
         
         <p class="product-subtitle">
-          Refined tailoring meets modern minimalism. Crafted from premium cotton for effortless sophistication.
+          The essence of versatility. A tailored cut that walks the line between masculine structure and feminine grace. Wear it tucked with denim and jewelry, or let it flow freely—it adapts to your narrative.
         </p>
 
-        <div class="product-type">100% Cotton</div>
+        <!-- FEELING TAGS -->
+        <div class="feeling-tags">
+          <span class="feeling-tag">Confident</span>
+          <span class="feeling-tag">Bold</span>
+          <span class="feeling-tag">Versatile</span>
+          <span class="feeling-tag">Free</span>
+        </div>
 
         <!-- SIZE SELECTION -->
         <div class="size-section">
@@ -404,7 +517,7 @@
         </div>
 
         <!-- ADD TO CART -->
-        <button class="add-to-cart">add to cart⸺€ 120</button>
+        <button class="add-to-cart">add to cart ⸺ € 120</button>
         <div class="price-info">€ 120 per item</div>
 
         <!-- PRODUCT INFORMATION -->
@@ -412,20 +525,20 @@
           <h3 class="info-title">Details</h3>
           <div class="info-content">
             Premium cotton fabric<br>
-            Classic collar<br>
+            Classic collar design<br>
             Button-front closure<br>
             Long sleeves with button cuffs<br>
-            Regular fit
+            Regular fit silhouette
           </div>
         </div>
 
         <div class="info-section">
-          <h3 class="info-title">Care Instructions</h3>
+          <h3 class="info-title">Care</h3>
           <div class="info-content">
             Machine wash cold<br>
             Do not bleach<br>
             Tumble dry low<br>
-            Iron on medium heat<br>
+            Iron medium heat<br>
             Dry clean if desired
           </div>
         </div>
@@ -433,7 +546,7 @@
         <div class="info-section">
           <h3 class="info-title">Shipping</h3>
           <div class="info-content">
-            We offer free shipping to all EU countries above €100<br>
+            Free shipping to all EU countries above €100<br>
             UK Shipping: €20 flat rate<br>
             Worldwide Shipping: €40 flat rate
           </div>
@@ -443,54 +556,52 @@
 
     <!-- STORY SECTION -->
     <div class="story-section">
-      <h2 class="story-title">An Ode to Timeless Elegance</h2>
-      <div class="story-content">
-        <p>
-          <span class="initial">I</span>n the heart of our atelier, where craftsmanship meets contemporary design, 
-          Shirt 01 emerges as a testament to refined simplicity. Each stitch tells a story of dedication, 
-          each seam a commitment to excellence that transcends fleeting trends.
-        </p>
-        <p>
-          Inspired by the understated sophistication of modern European tailoring, this piece embodies 
-          the essence of versatility. From boardroom presentations to evening gatherings, it adapts 
-          seamlessly to the rhythm of contemporary life while maintaining an air of effortless grace.
-        </p>
-        <p>
-          The carefully selected cotton speaks to our commitment to both comfort and durability. 
-          It breathes with you, moves with you, and ages gracefully—developing a unique character 
-          that becomes distinctly yours over time.
-        </p>
+      <div class="story-container">
+        <img src="shirt-01.jpg" alt="Inspiration" class="story-image">
+        
+        <div class="story-content">
+          <h2 class="story-title">The Confidence of Simplicity</h2>
+          <div class="story-divider"></div>
+          <p>
+            <span class="initial">I</span>n the quiet galleries of the Louvre, where marble goddesses stand frozen in timeless grace, there exists a particular quality—an effortless confidence that transcends era and expectation. Shirt 01 captures this essence.
+          </p>
+          <p>
+            This is not merely a garment; it is an invitation to embody the duality of strength and softness. The tailored lines echo masculine precision, yet the way it drapes speaks to feminine fluidity. Tuck it into high-waisted denim with layered gold chains, or wear it loose over tailored trousers—each styling tells a different story, yet the narrative remains unmistakably yours.
+          </p>
+          <p>
+            Like sunlight filtering through Roman architecture, this shirt adapts to its environment while maintaining its essential character. It is the piece you reach for when you want to feel both grounded and free, structured and spontaneous.
+          </p>
+        </div>
       </div>
     </div>
 
     <!-- RELATED PRODUCTS -->
     <div class="related-products">
-      <h2 class="related-title">More to explore</h2>
+      <h2 class="related-title">Continue Exploring</h2>
       <div class="related-grid">
         <div class="related-item">
           <a href="shirt-02.html">
-            <img src="shirt-02.jpg" alt="Shirt 02">
-            <h3>Shirt 02</h3>
-            <p>Contemporary silhouette designed for the discerning individual. Elevated essentials for everyday wear.</p>
-            <p class="price">€ 95</p>
+            <div class="related-item-image">
+              <img src="shirt-02.jpg" alt="Shirt 02">
+            </div>
+            <div class="related-item-info">
+              <h3>Shirt 02</h3>
+              <p>Contemporary sophistication for the discerning individual. A silhouette that speaks of quiet confidence and understated luxury.</p>
+              <p class="price">€ 95</p>
+            </div>
           </a>
         </div>
 
         <div class="related-item">
           <a href="shirt-03.html">
-            <img src="shirt-03.jpg" alt="Shirt 03">
-            <h3>Shirt 03</h3>
-            <p>Exceptional quality fabric with impeccable attention to detail. A statement piece for the modern wardrobe.</p>
-            <p class="price">€ 150</p>
-          </a>
-        </div>
-
-        <div class="related-item">
-          <a href="shirt-02.html">
-            <img src="shirt-02.jpg" alt="Shirt 02">
-            <h3>Shirt 02</h3>
-            <p>Contemporary silhouette designed for the discerning individual.</p>
-            <p class="price">€ 95</p>
+            <div class="related-item-image">
+              <img src="shirt-03.jpg" alt="Shirt 03">
+            </div>
+            <div class="related-item-info">
+              <h3>Shirt 03</h3>
+              <p>A statement in simplicity. Exceptional fabric meets architectural precision. This is the piece that transforms moments into memories.</p>
+              <p class="price">€ 150</p>
+            </div>
           </a>
         </div>
       </div>
@@ -499,11 +610,9 @@
 
   <script>
     function selectSize(button) {
-      // Remove selected class from all buttons
       document.querySelectorAll('.size-option').forEach(btn => {
         btn.classList.remove('selected');
       });
-      // Add selected class to clicked button
       button.classList.add('selected');
     }
   </script>
