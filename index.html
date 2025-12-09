@@ -88,6 +88,7 @@
       margin-top: 90px;
       position: relative;
       background-color: #ddd8ca;
+      border: 1px solid #000;
     }
 
     .hero::before {
@@ -333,6 +334,12 @@
     @media (max-width: 768px) {
       header {
         padding: 20px 25px;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .logo-container {
+        order: -1;
       }
 
       .nav-left, .nav-right {
@@ -359,6 +366,10 @@
 
       .philosophy-section {
         padding: 60px 25px;
+      }
+
+      .hero {
+        margin-top: 140px;
       }
 
       .hero h1 {
