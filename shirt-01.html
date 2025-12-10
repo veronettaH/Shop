@@ -419,10 +419,24 @@
       }
     }
 
-    @media (max-width: 768px) {
-      main {
-        padding: 40px 20px;
-      }
+      @media (max-width: 768px) {
+  header {
+    padding: 20px 25px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .logo-container {
+    order: -1;
+  }
+
+  main {
+    margin-top: 140px;
+    padding: 40px 20px;
+  }
+
+  /* ... rest of your existing mobile styles ... */
+}
 
       .product-details {
         padding: 30px 25px;
